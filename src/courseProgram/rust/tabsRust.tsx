@@ -7,22 +7,24 @@ import { Button } from "../../components/general/button"
 export function TabsDemo({ Content }: any) {
   const tabs = [
     {
-      title: "What is Go?",
+      title: "What is Rust?",
       value: "opening",
       content: (
-        <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-cyan-50 bg-gradient-to-br from-cyan-500 to-cyan-800">
-          <p>What is Go?</p>
-          <p className="text-base md:text-xl text-cyan-200 mt-5">Go is a programming language made by Google to be simple, fast, and easy to use. It's great for building websites, apps, and tools that handle lots of tasks at once. Developers like it because it's quick, reliable, and works well for modern software projects like cloud systems and services.</p>
+        <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-orange-50 bg-gradient-to-br from-orange-700 to-red-950">
+          <p>What is Rust?</p>
+          <p className="text-base md:text-xl text-red-50 mt-5">
+            Rust is a systems programming language that focuses on speed, memory safety, and parallelism. It's great for building reliable and efficient software, from operating systems to web applications. Developers love Rust for its modern features, friendly compiler, and strong guarantees against common bugs like null pointer dereferences and data races.
+          </p>
           <DummyContent />
         </div>
       ),
     },
     {
-      title: "Who use Go?",
+      title: "Who use Rust?",
       value: "main-1",
       content: (
-        <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-cyan-100 bg-gradient-to-br from-cyan-700 to-cyan-900">
-          <p>Who use Go?</p>
+        <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-orange-200 bg-gradient-to-br from-red-950 to-amber-900">
+          <p>Who use Rust ?</p>
           <div className="storybook-fix mt-20 relative flex h-full max-h-32 min-h-32 w-full items-center justify-center overflow-hidden rounded border bg-background">
             <Marquee pauseOnHover repeat={5}>
               <Content />
@@ -36,9 +38,9 @@ export function TabsDemo({ Content }: any) {
       title: "Comparison",
       value: "comparison",
       content: (
-        <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-blue-950 bg-gradient-to-br from-cyan-200 to-blue-200">
+        <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-amber-950 bg-gradient-to-br from-amber-200 to-orange-200">
           <p>Comparison with another language</p>
-          <GeneralTabs tabs={["Python","Java","C#","Rust"]} language="Go"/>
+          <GeneralTabs tabs={["Go","C++","C","Java"]} language="Rust"/>
         </div>
       ),
     },
@@ -75,15 +77,15 @@ export function TabsDemo({ Content }: any) {
       title: "Get Started",
       value: "getstarted",
       content: (
-        <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-blue-400 to-violet-950">
-          <p>Get Started with Go</p>
+        <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-orange-400 to-amber-950">
+          <p>Get Started with Rust</p>
           <div className="grid w-11/12 grid-cols-3 gap-10 justify-between mx-auto mt-12 z-50">
             
             <div className="text-white text-xl gap-3 flex flex-col text-center z-50">
-              <h1>Install Go</h1>
+              <h1>Install Rust</h1>
               <Button className="text-lg px-2 py-1 bg-black rounded">
-                <img src="/program/go.svg" className="h-full"/>
-                <h1>Download Go</h1>
+                <img src="/program/rust.svg" className="h-full"/>
+                <h1>Download Rust</h1>
               </Button>
             </div>
             
@@ -97,42 +99,8 @@ export function TabsDemo({ Content }: any) {
               </Button>
 
               <Button className="text-lg px-2 py-1 bg-white text-black rounded">
-                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 256 256">
-                  <defs>
-                    <linearGradient id="logosGoland0" x1="63.101%" x2="28.874%" y1="29.811%" y2="83.71%">
-                      <stop offset="0%" stop-color="#087cfa" />
-                      <stop offset="2%" stop-color="#0d7bfa" />
-                      <stop offset="37%" stop-color="#5566f9" />
-                      <stop offset="66%" stop-color="#8a57f8" />
-                      <stop offset="88%" stop-color="#ab4ef7" />
-                      <stop offset="100%" stop-color="#b74af7" />
-                    </linearGradient>
-                    <linearGradient id="logosGoland1" x1="49.124%" x2="74.872%" y1="38.465%" y2="4.95%">
-                      <stop offset="0%" stop-color="#087cfa" />
-                      <stop offset="2%" stop-color="#0d7bfa" />
-                      <stop offset="37%" stop-color="#5566f9" />
-                      <stop offset="66%" stop-color="#8a57f8" />
-                      <stop offset="88%" stop-color="#ab4ef7" />
-                      <stop offset="100%" stop-color="#b74af7" />
-                    </linearGradient>
-                    <linearGradient id="logosGoland2" x1="13.896%" x2="86.031%" y1="71.063%" y2="34.549%">
-                      <stop offset="0%" stop-color="#087cfa" />
-                      <stop offset="10%" stop-color="#1598d3" />
-                      <stop offset="22%" stop-color="#23b6aa" />
-                      <stop offset="35%" stop-color="#2dcc8b" />
-                      <stop offset="46%" stop-color="#35dd74" />
-                      <stop offset="57%" stop-color="#39e767" />
-                      <stop offset="67%" stop-color="#3bea62" />
-                    </linearGradient>
-                  </defs>
-                  <path fill="url(#logosGoland0)" d="M225.493 99.013L256 166.667L203.787 256l-32.16-78.08z" />
-                  <path fill="#b74af7" d="m171.627 177.92l32.16 78.08l-80.907-27.813z" />
-                  <path fill="url(#logosGoland1)" d="M180.347 72.293L163.76 0H71.787L0 109.813l20.773 50.454L0 206.32L148.667 79.84z" />
-                  <path fill="url(#logosGoland2)" d="M256 54.347L148.667 79.84L0 206.32L95.893 256l75.734-78.08z" />
-                  <path d="M48 48h160v160H48z" />
-                  <path fill="#fff" d="M63.013 178h60v10h-60zm-4.507-75.84v-.187A33.87 33.87 0 0 1 93.093 68a36.32 36.32 0 0 1 25.947 9.04l-9.147 11.04a24.35 24.35 0 0 0-17.253-6.747c-10.453 0-18.627 8.964-18.95 19.864l-.01.856c0 11.848 7.977 20.592 19.328 20.924l.672.01a23.12 23.12 0 0 0 13.653-3.974v-9.493H92.72V96.987h28.613v28.64a42.86 42.86 0 0 1-28.186 10.48c-20.507 0-34.64-14.427-34.64-33.947m68.96 0v-.187A34.107 34.107 0 0 1 162.64 68c20.052 0 34.535 14.737 34.95 33.107l.01 1a34.107 34.107 0 0 1-34.159 34.149l-.988-.016c-20.373-.133-34.986-15.307-34.986-34.08m54.96 0v-.187a20.027 20.027 0 0 0-19.973-20.64a19.734 19.734 0 0 0-19.8 19.65l.014.99a20.053 20.053 0 0 0 20 20.747a19.734 19.734 0 0 0 19.76-20.56" />
-                </svg>
-                <h1>GoLand</h1>
+                <img src="/rust/rustrover.svg" className="h-full w-auto" />
+                <h1>RustRover</h1>
               </Button>
             </div>
 
@@ -147,8 +115,8 @@ export function TabsDemo({ Content }: any) {
                 <h1>Browse Others</h1>
               </Button>
               <Button className="text-lg px-2 py-1 bg-zinc-700 rounded">
-                <img src="/program/go.svg" className="h-full w-auto"/>
-                <h1>Go Courses</h1>
+                <img src="/program/rust.svg" className="h-full w-auto"/>
+                <h1>Rust Courses</h1>
               </Button>
             </div>
           </div>
@@ -168,11 +136,11 @@ export function TabsDemo({ Content }: any) {
 const DummyContent = () => {
   return (
     <img
-      src="/go.svg"
-      alt="Go"
-      width="1000"
-      height="1000"
-      className="object-cover object-left-top h-[60%] md:h-[90%] absolute -bottom-10 inset-x-0 w-[90%] rounded-xl mx-auto"
+      src="/rust.svg"
+      alt="Rust"
+      width="500"
+      height="500"
+      className="object-cover object-center h-[60%] md:h-[50%] absolute -bottom-1 inset-x-0 w-[50%] rounded-xl mx-auto"
     />
   );
 };

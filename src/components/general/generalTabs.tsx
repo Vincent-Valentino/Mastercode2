@@ -1,9 +1,11 @@
 import { motion } from 'framer-motion'
 import { useState } from 'react'
-import { GoSelection } from '../../courseProgram/go/goComparasion';
+import { GoSelection } from '../../courseProgram/go/goComparasion'
+import { RustSelection } from "../../courseProgram/rust/rustComparasion"
 
 interface GeneralTabsProps {
   tabs: string[];
+  language: string;
 }
 
 interface TabProps {
@@ -34,7 +36,7 @@ const Tab = ({ text, selected, setSelected}: TabProps) => {
   )
 }
 
-const GeneralTabs:React.FC<GeneralTabsProps> = ({tabs}) => {
+const GeneralTabs:React.FC<GeneralTabsProps> = ({tabs, language}) => {
   const [selected, setSelected] = useState<string>(tabs[0])
   return (
     <>
@@ -48,7 +50,11 @@ const GeneralTabs:React.FC<GeneralTabsProps> = ({tabs}) => {
           />
         ))}
       </div>
+      {language === "Rust" ? (
+      <RustSelection section={`Rust vs ${selected}`}/>
+      ) : (
       <GoSelection section={`Go vs ${selected}`}/>
+      )}
     </>
   )
 }
