@@ -31,7 +31,7 @@ const marqueeContent: MarqueeContentProps[] = [
   },
 ];
 
-export const Content = () => (
+const Content = () => (
   marqueeContent.map((item) => (
     <div key={item.name} className="flex items-center w-[85vw] md:w-[30vw] shadow-black border-slate-700 space-x-3 p-2 border-4 md:space-x-6 my-2 md:p-4 bg-stone-950 shadow-md rounded-2xl cursor-pointer hover:scale-95 transition-all duration-500 hover:saturate-200">
       <img src={item.image} alt={item.name} className="size-28 md:w-auto pl-3 py-3 md:h-full" />
@@ -43,7 +43,7 @@ export const Content = () => (
   ))
 );
 
-export const Go = () => {
+const Go = () => {
   return(
     <>
       <WavyBackground speed="fast" colors={["#11e880","#0040f9","#0080f9","#00f9de","#1ca495"]}>
@@ -57,3 +57,5 @@ export const Go = () => {
     </>
   )
 }
+
+export default Go;

@@ -4,12 +4,14 @@ import { Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import { useQuery } from "@tanstack/react-query";
+import Loader from "../components/general/loader.tsx";
 
-export const News: React.FC<{ page: number }> = ({ page }) => {
+const News: React.FC<{ page: number }> = ({page}) => {
   const apikey: string = "2b159166f56f4b2aad3d08a9f8b4e314";
 
   const fetchNews = async (page: number) => {
-    const url = `https://newsapi.org/v2/everything?q=programming+software&language=en&sortBy=publishedAt&pageSize=10&page=${page}&apiKey=${apikey}`;
+    await new Promise((resolve) => setTimeout(resolve, 5000));
+    const url = `https://newsapi.org/v2/everything?q=coding&language=en&sortBy=popularity&pageSize=10&page=${page}&apiKey=${apikey}`;
     const response = await fetch(url);
 
     if (!response.ok) {
@@ -27,39 +29,38 @@ export const News: React.FC<{ page: number }> = ({ page }) => {
 
   if (isLoading)
     return (
-      <div className="flex flex-col bg-neutral-800 h-[50vh] w-2/5 rounded-lg shadow-md">
-        <p>Loading...</p>
+      <div className="flex flex-col justify-center border-orange-500 border-2 shadow-orange-600 items-center bg-neutral-800 h-[38vh] rounded-lg shadow-md">
+        <Loader />
       </div>
     );
 
   if (error instanceof Error)
     return (
-      <div className="flex flex-col bg-neutral-800 h-[50vh] w-2/5 rounded-lg shadow-md">
+      <div className="flex flex-col border-orange-500 border-2 shadow-orange-600 bg-neutral-800 h-[38vh] rounded-lg shadow-md">
         <p>Error: {error.message}</p>
       </div>
     );
 
   return (
-    <div className="flex flex-col bg-neutral-800 h-[50vh] w-2/5 rounded-lg shadow-md">
+    <div className="relative flex flex-col border-orange-500 border-2 shadow-orange-600 bg-zinc-700 h-[38vh] rounded-lg shadow-md">
       <Swiper
-        className="h-[50vh] w-full max-w-[800px]"
-        modules={[ Pagination]}
+        className="h-full w-full max-w-[800px]"
+        modules={[Pagination]}
         spaceBetween={10}
         slidesPerView={1}
-        navigation
         pagination={{ clickable: true }}
       >
         {data?.map((article: any, index: number) => (
           <SwiperSlide key={index} className="flex flex-col h-full">
-            <div className="flex flex-col h-full">
+            <div className="relative flex flex-col h-full">
               <img
                 src={article.urlToImage || "https://via.placeholder.com/800x400?text=No+Image"}
                 alt={article.title}
-                className="h-[30vh] w-full object-cover object-top"
+                className="h-[20vh] w-full object-cover object-top-left z-0 rounded-t-lg" // Ensure z-index is lower
               />
-              <div className="mt-2 p-3 h-[20vh] overflow-hidden">
-                <h2 className="text-sm font-bold text-yellow-400">{article.title}</h2>
-                <p className="text-xs text-gray-400 line-clamp-3">
+              <div className="relative z-10 p-2 h-[18vh] overflow-hidden bg-zinc-800 rounded-b-lg">
+                <h2 className="text-xs font-bold text-yellow-400 line-clamp-2">{article.title}</h2>
+                <p className="text-[0.7rem] text-gray-400 line-clamp-2">
                   {article.description || "No description available."}
                 </p>
                 <a
@@ -75,6 +76,8 @@ export const News: React.FC<{ page: number }> = ({ page }) => {
           </SwiperSlide>
         ))}
       </Swiper>
-    </div>
+  </div>
   );
 };
+
+export default News;

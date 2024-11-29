@@ -13,6 +13,10 @@ module.exports = {
   theme: {
     extend: {
       keyframes: {
+        "bg-position": {
+         "0%": { backgroundPosition: "0% 50%" },
+          "100%": { backgroundPosition: "100% 50%" },
+         },
         "marquee-x": {
           "0%": { transform: "translateX(0)" },
           "100%": { transform: "translateX(calc(-100% - var(--gap)))" },

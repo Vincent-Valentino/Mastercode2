@@ -1,11 +1,11 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./home/home"
-import { Go } from "./courseProgram/go/main"
+import Go  from "./courseProgram/go/main"
 import Rust from "./courseProgram/rust/main"
 import Python from "./courseProgram/python/main"
 import Typescript from "./courseProgram/typescript/main"
-import { SidebarDemo } from "./dashboard/dashboard"
+import { SidebarDemo } from "./main/content"
 
 const App: React.FC = () => {
   return (
