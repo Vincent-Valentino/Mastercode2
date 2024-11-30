@@ -1,10 +1,10 @@
 import { cn } from "../../lib/utils";
 import React, { useState, createContext, useContext } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import useSectionStore from "../../store/sectionStore";
 
 interface Links {
   label: string;
-  href: string;
   icon: string,
 }
 
@@ -161,9 +161,10 @@ export const SidebarLink = ({
   className?: string;
 }) => {
   const { open, animate } = useSidebar();
+  const { selectSection } = useSectionStore();
   return (
     <a
-      href={link.href}
+      onClick={() => {selectSection(link.label)}}
       className={cn(
         "flex items-center justify-start gap-2  group/sidebar py-2",
         className

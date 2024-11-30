@@ -7,8 +7,7 @@ const {
 module.exports = {
   content: [
     "./src/**/*.{js,jsx,ts,tsx}",
-    "./public/index.html",
-    "./node_modules/animata/**/*.js", // Include Animata components
+    "./public/index.html"
   ],
   theme: {
     extend: {
@@ -16,7 +15,7 @@ module.exports = {
         "bg-position": {
          "0%": { backgroundPosition: "0% 50%" },
           "100%": { backgroundPosition: "100% 50%" },
-         },
+        },
         "marquee-x": {
           "0%": { transform: "translateX(0)" },
           "100%": { transform: "translateX(calc(-100% - var(--gap)))" },

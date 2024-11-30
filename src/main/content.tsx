@@ -4,28 +4,30 @@ import { Sidebar, SidebarBody, SidebarLink } from "../components/aceternity/side
 import { cn } from "../lib/utils";
 import Dashboard from "./dashboard";
 import Profile from "./profile";
+import Course from "./course";
+import useSectionStore from "../store/sectionStore";
 
-export function SidebarDemo() {
-  let selectedSection: string = ""
+const MainPage = () => {
+  const { section } = useSectionStore();
   const links = [
     {
       label: "Dashboard",
-      href: "#",
       icon: "/utils/dashboard2.svg"
     },
     {
       label: "Profile",
-      href: "#",
       icon: "/utils/profile.svg"
     },
     {
       label: "Settings",
-      href: "#",
       icon: "/utils/settings.svg"
     },
     {
       label: "Logout",
-      href: "#",
+      icon: "/utils/logout.svg"
+    },
+    {
+      label: "Course",
       icon: "/utils/logout.svg"
     }
   ];
@@ -49,17 +51,20 @@ export function SidebarDemo() {
           </div>
         </SidebarBody>
       </Sidebar>
-      {selectedSection === 'Dashboard' ? (
+      {section === 'Dashboard' ? (
       <Dashboard />
-    ) : selectedSection === 'Profile' ? (
+    ) : section === 'Profile' ? (
       <Profile />
+    ) : section === "Course" ? (
+      <Course />
     ) : (
-      <Dashboard />
+      <div className="bg-red-900 w-full h-full"></div>
     )}
     </div>
   );
 }
-export const Logo = () => {
+
+const Logo = () => {
   return (
     <a
       href="#"
@@ -76,7 +81,7 @@ export const Logo = () => {
   );
 };
 
-export const LogoIcon = () => {
+const LogoIcon = () => {
   return (
     <a
       href="#"
@@ -86,3 +91,5 @@ export const LogoIcon = () => {
     </a>
   );
 };
+
+export default MainPage;
