@@ -78,18 +78,18 @@ export const GoSelection:React.FC<GoSelectionProps> = ({section}) => {
   const selected = selection.filter(s => s.section === section); 
 
   return(
-    <div className="flex gap-4">
-      <div className='bg-cyan-50 w-1/2 rounded-xl h-84 flex flex-col p-5'>
-        <img src="/program/go.svg" className='size-16'/>
-        <div className='p-2 text-sm'>
-          <ul className="px-5 py-2 list-disc">
+    <div className="flex md:flex-row flex-col gap-2 md:gap-4 pb-2">
+      <div className='bg-cyan-50 w-full md:w-1/2 rounded-xl h-auto md:h-84 flex flex-col p-5'>
+        <img src="/program/go.svg" className='size-10 md:size-16'/>
+        <div className='p-1 text-xs md:text-sm'>
+          <ul className="px-2 md:px-5 py-1 md:py-2 list-disc">
           {selected[0]?.first?.map((s, index) => (
             <li className="pb-1" key={index} id={`item-${index}`}>{s}</li>
           ))}
           </ul>
         </div>
       </div>
-      <div className='bg-cyan-50 w-1/2 rounded-xl flex flex-col h-84 p-5'>
+      <div className='bg-cyan-50 w-full hidden md:flex md:w-1/2 rounded-xl  flex-col h-84 p-5'>
         <img src={`/program/${selected[0].section.slice(6).toLowerCase() === "c#" ? "csharp" : selected[0].section.slice(6).toLowerCase()}.svg`}  className='size-16'/>
         <div className='p-2 text-sm'>
           <ul className="px-5 py-2 list-disc">

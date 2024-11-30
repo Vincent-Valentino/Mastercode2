@@ -33,11 +33,11 @@ const marqueeContent: MarqueeContentProps[] = [
 
 const Content = () => (
   marqueeContent.map((item) => (
-    <div key={item.name} className="flex items-center w-[85vw] md:w-[30vw] shadow-black border-slate-700 space-x-3 p-2 border-4 md:space-x-6 my-2 md:p-4 bg-stone-950 shadow-md rounded-2xl cursor-pointer hover:scale-95 transition-all duration-500 hover:saturate-200">
-      <img src={item.image} alt={item.name} className="size-28 md:w-auto pl-3 py-3 md:h-full" />
-      <div className="flex flex-col text-white w-full my-1">
-        <div className="font-bold md:text-xl md:mb-3">{item.name}</div>
-        <div className="text-xs text-wrap">{item.desc}</div>
+    <div key={item.name} className="flex items-center w-[60vw] md:w-[30vw] shadow-black border-slate-700 space-x-3 p-2 border-4 md:space-x-6 my-2 md:p-4 bg-stone-950 shadow-md rounded-2xl cursor-pointer hover:scale-95 transition-all duration-500 hover:saturate-200">      
+      <img src={item.image} alt={item.name} className="size-14 md:size-28 md:w-auto pl-3 md:py-3 md:h-full" />
+      <div className="flex flex-col text-white w-full md:my-1">
+        <div className="font-bold text-sm md:text-xl md:mb-3">{item.name}</div>
+        <div className="text-[0.5rem] md:text-sm line-clamp-1">{item.desc}</div>
       </div>
     </div>
   ))
@@ -48,7 +48,7 @@ const Go = () => {
     <>
       <WavyBackground speed="fast" colors={["#11e880","#0040f9","#0080f9","#00f9de","#1ca495"]}>
         <NavbarDemo/>
-        <div className="text-white w-full font-geo mt-[24rem] pl-20">
+        <div className="text-white w-full font-geo mt-[24rem] pl-3 md:pl-20">
           <h1 className="text-9xl mb-2 text-cyan-400 font-roboto ">Go</h1>
           <p className="text-2xl ml-2 text-blue-400">Fast, Simple, and Scalable</p>
         </div>

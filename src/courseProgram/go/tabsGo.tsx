@@ -12,7 +12,7 @@ export function TabsDemo({ Content }: any) {
       content: (
         <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-cyan-50 bg-gradient-to-br from-cyan-500 to-cyan-800">
           <p>What is Go?</p>
-          <p className="text-base md:text-xl text-cyan-200 mt-5">Go is a programming language made by Google to be simple, fast, and easy to use. It's great for building websites, apps, and tools that handle lots of tasks at once. Developers like it because it's quick, reliable, and works well for modern software projects like cloud systems and services.</p>
+          <p className="text-sm md:text-xl text-cyan-200 mt-2 md:mt-5">Go is a programming language made by Google to be simple, fast, and easy to use. It's great for building websites, apps, and tools that handle lots of tasks at once. Developers like it because it's quick, reliable, and works well for modern software projects like cloud systems and services.</p>
           <DummyContent />
         </div>
       ),
@@ -23,7 +23,7 @@ export function TabsDemo({ Content }: any) {
       content: (
         <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-cyan-100 bg-gradient-to-br from-cyan-700 to-cyan-900">
           <p>Who use Go?</p>
-          <div className="storybook-fix mt-20 relative flex h-full max-h-32 min-h-32 w-full items-center justify-center overflow-hidden rounded border bg-background">
+          <div className="storybook-fix mt-20 relative flex h-full max-h-32 min-h-32 w-full items-center justify-center overflow-hidden rounded border">
             <Marquee pauseOnHover repeat={5}>
               <Content />
             </Marquee>
@@ -36,7 +36,7 @@ export function TabsDemo({ Content }: any) {
       title: "Comparison",
       value: "comparison",
       content: (
-        <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-blue-950 bg-gradient-to-br from-cyan-200 to-blue-200">
+        <div className="w-full overflow-hidden relative h-full rounded-2xl px-5 py-5 md:p-10 text-xl md:text-4xl font-bold text-blue-950 bg-gradient-to-br from-cyan-200 to-blue-200">
           <p>Comparison with another language</p>
           <GeneralTabs tabs={["Python","Java","C#","Rust"]} language="Go"/>
         </div>
@@ -48,22 +48,22 @@ export function TabsDemo({ Content }: any) {
       content: (
         <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-blue-100 bg-gradient-to-br from-zinc-950 to-neutral-900">
           <p>Resources</p>
-          <div className="flex flex-row gap-12 w-11/12 mx-auto mt-20">
-            <LinkPreview url="https://go.dev/doc" className="text-lg bg-transparent text-center border-white border-2 py-1 px-3 rounded-3xl w-20px z-40">
+          <div className="flex flex-row gap-2 md:gap-12 md:w-11/12 mx-auto mt-5 md:mt-20">
+            <LinkPreview url="https://go.dev/doc" className="text-xs md:text-lg bg-transparent text-center border-white border-2 py-1 px-3 rounded-3xl w-20px z-40">
               Go Documentation
             </LinkPreview>
-            <LinkPreview url="https://gophercises.com/" className="text-lg bg-transparent text-center border-white border-2 py-1 px-3 rounded-3xl w-20px z-40">
+            <LinkPreview url="https://gophercises.com/" className="text-xs md:text-lg bg-transparent text-center border-white border-2 py-1 px-3 rounded-3xl w-20px z-40">
               Gophercises
             </LinkPreview>
-            <LinkPreview url="https://www.youtube.com/c/GolangCafe" className="text-lg bg-transparent text-center border-white border-2 py-1 px-3 rounded-3xl w-20px z-40">
+            <LinkPreview url="https://www.youtube.com/c/GolangCafe" className="text-xs md:text-lg bg-transparent text-center border-white border-2 py-1 px-3 rounded-3xl w-20px z-40">
               Golang Cafe (YT)
             </LinkPreview>
           </div>
-          <div className="flex flex-row gap-12 w-11/12 mx-auto ml-40 mt-8">
-            <LinkPreview side="bottom" url="https://www.freecodecamp.org/" className="text-lg bg-transparent text-center border-white border-2 py-1 px-3 rounded-3xl w-20px z-40">
+          <div className="flex flex-row md:gap-12 w-11/12 mx-auto md:ml-40 mt-8">
+            <LinkPreview side="bottom" url="https://www.freecodecamp.org/" className="text-xs md:text-lg bg-transparent text-center border-white border-2 py-1 px-3 rounded-3xl w-20px z-40">
               FreeCodeCamp
             </LinkPreview>
-            <LinkPreview side="bottom" url="https://awesome-go.com/" className="text-lg bg-transparent text-center border-white border-2 py-1 px-3 rounded-3xl w-20px z-40">
+            <LinkPreview side="bottom" url="https://awesome-go.com/" className="text-xs md:text-lg bg-transparent text-center border-white border-2 py-1 px-3 rounded-3xl w-20px z-40">
               Awesome Go
             </LinkPreview>
           </div>
@@ -159,7 +159,7 @@ export function TabsDemo({ Content }: any) {
   ];
 
   return (
-    <div className="h-[20rem] md:h-[40rem] [perspective:1000px] relative flex flex-col max-w-5xl mx-auto w-full text-black items-start justify-start mt-20">
+    <div className="h-[32rem] text-xs md:text-base md:h-[40rem] [perspective:1000px] w-11/12 relative flex flex-col max-w-5xl mx-auto md:w-full text-black items-start justify-start mt-20">
       <Tabs tabs={tabs} />
     </div>
   );
@@ -172,7 +172,7 @@ const DummyContent = () => {
       alt="Go"
       width="1000"
       height="1000"
-      className="object-cover object-left-top h-[60%] md:h-[90%] absolute -bottom-10 inset-x-0 w-[90%] rounded-xl mx-auto"
+      className="object-cover object-bottom md:object-top h-[60%] md:h-[90%] absolute -bottom-28 md:-bottom-10 inset-x-0 w-[90%] rounded-xl mx-auto"
     />
   );
 };

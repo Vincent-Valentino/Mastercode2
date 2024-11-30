@@ -22,7 +22,7 @@ const Tab = ({ text, selected, setSelected}: TabProps) => {
         selected
           ? 'text-white'
           : 'text-black hover:bg-blue-500 dark:hover:text-gray-100'
-      } relative rounded-md px-4 bg-white py-2 mt-20 text-sm font-medium transition-colors`}
+      } relative rounded-md px-2 md:px-4 bg-white py-1 md:py-2 mt-5 md:mt-20 text-xs md:text-sm font-medium transition-colors`}
     >
       <span className="relative z-10">{text}</span>
       {selected && (
@@ -40,7 +40,7 @@ const GeneralTabs:React.FC<GeneralTabsProps> = ({tabs, language}) => {
   const [selected, setSelected] = useState<string>(tabs[0])
   return (
     <>
-      <div className="mb-8 flex flex-wrap items-center gap-2">
+      <div className="mb-2 md:mb-8 flex flex-wrap items-center gap-1 md:gap-2">
         {tabs.map((tab) => (
           <Tab
             text={tab}

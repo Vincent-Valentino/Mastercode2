@@ -166,7 +166,7 @@ export const SidebarLink = ({
     <a
       onClick={() => {selectSection(link.label)}}
       className={cn(
-        "flex items-center justify-start gap-2  group/sidebar py-2",
+        "flex items-center justify-start gap-2  group/sidebar py-2 cursor-pointer",
         className
       )}
       {...props}
