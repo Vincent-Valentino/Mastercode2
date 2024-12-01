@@ -10,4 +10,4 @@ const useSectionStore = create<SectionState>((set) => ({
   selectSection: (section: string) => set({section})
 }))
 
-export default useSectionStore;
+export default useSectionStore
