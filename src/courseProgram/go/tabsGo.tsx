@@ -1,8 +1,8 @@
 import { Tabs } from "../../components/aceternity/tabs";
 import Marquee from "../../components/animata/marquee";
-import GeneralTabs from "../../components/general/generalTabs"
 import { LinkPreview } from "../../components/aceternity/linkPreview";
 import { Button } from "../../components/general/button"
+import ComparasionTabs from "../../components/general/comparasionTabs";
 
 export function TabsDemo({ Content }: any) {
   const tabs = [
@@ -38,7 +38,7 @@ export function TabsDemo({ Content }: any) {
       content: (
         <div className="w-full overflow-hidden relative h-full rounded-2xl px-5 py-5 md:p-10 text-xl md:text-4xl font-bold text-blue-950 bg-gradient-to-br from-cyan-200 to-blue-200">
           <p>Comparison with another language</p>
-          <GeneralTabs tabs={["Python","Java","C#","Rust"]} language="Go"/>
+          <ComparasionTabs tabs={["Python","Java","C#","Rust"]} language="Go"/>
         </div>
       ),
     },
@@ -48,7 +48,7 @@ export function TabsDemo({ Content }: any) {
       content: (
         <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-blue-100 bg-gradient-to-br from-zinc-950 to-neutral-900">
           <p>Resources</p>
-          <div className="flex flex-row gap-2 md:gap-12 md:w-11/12 mx-auto mt-5 md:mt-20">
+          <div className="flex flex-col md:flex-row gap-2 md:gap-12 md:w-11/12 mx-auto mt-5 md:mt-20">
             <LinkPreview url="https://go.dev/doc" className="text-xs md:text-lg bg-transparent text-center border-white border-2 py-1 px-3 rounded-3xl w-20px z-40">
               Go Documentation
             </LinkPreview>
@@ -59,7 +59,7 @@ export function TabsDemo({ Content }: any) {
               Golang Cafe (YT)
             </LinkPreview>
           </div>
-          <div className="flex flex-row md:gap-12 w-11/12 mx-auto md:ml-40 mt-8">
+          <div className="flex flex-col md:flex-row gap-2 md:gap-12 w-11/12 mx-auto md:ml-40 mt-8">
             <LinkPreview side="bottom" url="https://www.freecodecamp.org/" className="text-xs md:text-lg bg-transparent text-center border-white border-2 py-1 px-3 rounded-3xl w-20px z-40">
               FreeCodeCamp
             </LinkPreview>

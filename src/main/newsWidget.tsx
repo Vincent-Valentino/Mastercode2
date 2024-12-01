@@ -42,41 +42,44 @@ const News: React.FC<{ page: number }> = ({page}) => {
     );
 
   return (
-    <div className="relative flex flex-col border-orange-500 border-2 shadow-orange-600 bg-zinc-700 h-[38vh] rounded-lg shadow-md">
-      <Swiper
-        className="h-full w-full max-w-[800px]"
-        modules={[Pagination]}
-        spaceBetween={10}
-        slidesPerView={1}
-        pagination={{ clickable: true }}
-      >
-        {data?.map((article: any, index: number) => (
-          <SwiperSlide key={index} className="flex flex-col h-full">
-            <div className="relative flex flex-col h-full">
-              <img
-                src={article.urlToImage || "https://via.placeholder.com/800x400?text=No+Image"}
-                alt={article.title}
-                className="h-[20vh] w-full object-cover object-top-left z-0 rounded-t-lg" // Ensure z-index is lower
-              />
-              <div className="relative z-10 p-2 h-[18vh] overflow-hidden bg-zinc-800 rounded-b-lg">
-                <h2 className="text-xs font-bold text-yellow-400 line-clamp-2">{article.title}</h2>
-                <p className="text-[0.7rem] text-gray-400 line-clamp-2">
-                  {article.description || "No description available."}
-                </p>
-                <a
-                  href={article.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-400 text-xs hover:underline"
-                >
-                  Read more
-                </a>
+    <div>
+      <h1 className="text-white ml-2 mt-4 flex items-center gap-1 mb-1"><img src="/utils/news.svg" className="size-4"/>News</h1>
+      <div className="relative flex flex-col border-orange-500 border-2 shadow-orange-600 bg-zinc-700 h-[38vh] rounded-lg shadow-md">
+        <Swiper
+          className="h-full w-full max-w-[800px]"
+          modules={[Pagination]}
+          spaceBetween={10}
+          slidesPerView={1}
+          pagination={{ clickable: true }}
+        >
+          {data?.map((article: any, index: number) => (
+            <SwiperSlide key={index} className="flex flex-col h-full">
+              <div className="relative flex flex-col h-full">
+                <img
+                  src={article.urlToImage || "https://via.placeholder.com/800x400?text=No+Image"}
+                  alt={article.title}
+                  className="h-[20vh] w-full object-cover object-top-left z-0 rounded-t-lg" // Ensure z-index is lower
+                />
+                <div className="relative z-10 p-2 h-[18vh] overflow-hidden bg-zinc-800 rounded-b-lg">
+                  <h2 className="text-xs font-bold text-yellow-400 line-clamp-2">{article.title}</h2>
+                  <p className="text-[0.7rem] text-gray-400 line-clamp-2">
+                    {article.description || "No description available."}
+                  </p>
+                  <a
+                    href={article.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-400 text-xs hover:underline"
+                  >
+                    Read more
+                  </a>
+                </div>
               </div>
-            </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
-  </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
+    </div>
   );
 };
 

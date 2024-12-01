@@ -3,9 +3,9 @@ import { useState } from 'react'
 import { GoSelection } from '../../courseProgram/go/goComparasion'
 import { RustSelection } from "../../courseProgram/rust/rustComparasion"
 
-interface GeneralTabsProps {
+interface ComparasionTabsProps {
   tabs: string[];
-  language: string;
+  language?: string;
 }
 
 interface TabProps {
@@ -36,7 +36,7 @@ const Tab = ({ text, selected, setSelected}: TabProps) => {
   )
 }
 
-const GeneralTabs:React.FC<GeneralTabsProps> = ({tabs, language}) => {
+const ComparasionTabs:React.FC<ComparasionTabsProps> = ({tabs, language}) => {
   const [selected, setSelected] = useState<string>(tabs[0])
   return (
     <>
@@ -59,4 +59,4 @@ const GeneralTabs:React.FC<GeneralTabsProps> = ({tabs, language}) => {
   )
 }
 
-export default GeneralTabs;
+export default ComparasionTabs;

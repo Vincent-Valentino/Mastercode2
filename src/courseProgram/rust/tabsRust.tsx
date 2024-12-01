@@ -1,8 +1,8 @@
 import { Tabs } from "../../components/aceternity/tabs";
 import Marquee from "../../components/animata/marquee";
-import GeneralTabs from "../../components/general/generalTabs"
 import { LinkPreview } from "../../components/aceternity/linkPreview";
 import { Button } from "../../components/general/button"
+import ComparasionTabs from "../../components/general/comparasionTabs";
 
 export function TabsDemo({ Content }: any) {
   const tabs = [
@@ -40,7 +40,7 @@ export function TabsDemo({ Content }: any) {
       content: (
         <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-amber-950 bg-gradient-to-br from-amber-200 to-orange-200">
           <p>Comparison with another language</p>
-          <GeneralTabs tabs={["Go","C++","C","Java"]} language="Rust"/>
+          <ComparasionTabs tabs={["Go","C++","C","Java"]} language="rust"/>
         </div>
       ),
     },

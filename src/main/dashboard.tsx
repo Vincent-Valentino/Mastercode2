@@ -74,10 +74,7 @@ const Dashboard = () => {
             <Activity />
             <History />
             <Projects/>
-            <div>
-              <h1 className="text-white ml-2 mt-4 flex items-center gap-1 mb-1"><img src="/utils/news.svg" className="size-4"/>News</h1>
-              <News page={1} />
-            </div>
+            <News page={2} />
           </div>
         </div>
       </div>
